@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root {
+  font-family: Poppins, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 90vh;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #436b8c;
+  border-radius: 20px;
+  /* background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)); */
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: aliceblue;
+  border: 1px solid aliceblue;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+.active {
+  background-color: aliceblue;
+  color: black;
+}
+
+.timer {
+  font-size: 100px;
+  color: aliceblue;
+}
+
+.setting-button {
+  padding: 0;
+  font-size: 24px;
+  border: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setting-button:hover {
+  background-color: transparent;
+}
