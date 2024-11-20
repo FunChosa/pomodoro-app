@@ -17,7 +17,7 @@ function PomodoroTimer() {
 
   const timers = {
     pomodoro: 25,
-    shortBreak: 0.1,
+    shortBreak: 5,
     longBreak: 10,
   };
 
