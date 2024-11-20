@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { MdRestartAlt, MdOutlineSettings } from "react-icons/md";
+import { MdRestartAlt } from "react-icons/md";
+import { useMediaQuery } from "react-responsive";
 
 function PomodoroTimer() {
+  const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
   const timers = {
     pomodoro: 25,
     shortBreak: 5,
@@ -65,22 +67,8 @@ function PomodoroTimer() {
     }
   };
 
-  const backgroundImageStyle = {
-    1: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../src/assets/bg-images/1.jpg")`,
-    2: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../src/assets/bg-images/2.jpg")`,
-    3: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../src/assets/bg-images/3.jpg")`,
-    4: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../src/assets/bg-images/4.jpg")`,
-  };
-
   return (
-    <div
-      className="timer-container"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../src/assets/bg-images/4.jpg")`,
-        backgroundSize: "cover",
-        backdropFilter: "brightness(50%)",
-      }}
-    >
+    <div className="timer-container">
       <div className="timer-buttons">
         <button
           onClick={() => handleSetTime(timers.pomodoro)}
@@ -92,13 +80,13 @@ function PomodoroTimer() {
           onClick={() => handleSetTime(timers.shortBreak)}
           className={timerType === "shortBreak" ? "active" : ""}
         >
-          Short Break
+          {isMobile ? "SB" : "Short Break"}
         </button>
         <button
           onClick={() => handleSetTime(timers.longBreak)}
           className={timerType === "longBreak" ? "active" : ""}
         >
-          Long Break
+          {isMobile ? "LB" : "Long Break"}
         </button>
       </div>
       <div className="timer">
@@ -110,9 +98,6 @@ function PomodoroTimer() {
         </button>
         <button className="setting-button" onClick={handleReset}>
           <MdRestartAlt />
-        </button>
-        <button className="setting-button">
-          <MdOutlineSettings />
         </button>
       </div>
     </div>

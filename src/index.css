@@ -11,18 +11,12 @@
 }
 
 body {
-  background-color: #1f1f1f;
+  background-image: url(./src/assets/bg-images/1.jpg);
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-.app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90vw;
-  height: 90vh;
 }
 
 .timer-container {
@@ -31,9 +25,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 50px;
-  background-color: #436b8c;
+  margin: 20px;
   border-radius: 20px;
-  /* background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)); */
+  border: none;
+  background-image: linear-gradient(rgba(0, 40, 120, 0.5),rgba(0, 0, 0, 0.8));
+  backdrop-filter: blur(2px);
 }
 
 .timer-buttons {
@@ -51,6 +47,7 @@ button {
   border: 1px solid aliceblue;
   background-color: transparent;
   font-weight: 600;
+  font-size: 14px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -80,4 +77,11 @@ button:hover {
 
 .setting-button:hover {
   background-color: transparent;
+}
+
+
+@media screen and (max-width: 600px) {
+  .timer {
+    font-size: 80px;
+  }
 }
