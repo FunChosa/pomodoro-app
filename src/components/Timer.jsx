@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { MdRestartAlt } from "react-icons/md";
 import { useMediaQuery } from "react-responsive";
+import bg0 from "../../src/assets/bg-images/0.jpg";
 import bg1 from "../../src/assets/bg-images/1.jpg";
-import bg2 from "../../src/assets/bg-images/2.jpg";
 import bg3 from "../../src/assets/bg-images/3.jpg";
 import bg4 from "../../src/assets/bg-images/4.jpg";
+import bg6 from "../../src/assets/bg-images/6.jpg";
+import bg7 from "../../src/assets/bg-images/7.jpg";
+import bg8 from "../../src/assets/bg-images/8.jpg";
 
 function PomodoroTimer() {
   const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
-  const bgs = [bg1, bg2, bg3, bg4];
-  const [bg, setBg] = useState(bgs[0]);
+  const bgs = [bg0, bg1, bg3, bg4, bg7, bg6, bg8];
+  const [bg, setBg] = useState(`url(${bgs[0]})`);
 
   const timers = {
     pomodoro: 25,
-    shortBreak: 5,
+    shortBreak: 0.1,
     longBreak: 10,
   };
 
@@ -105,8 +108,8 @@ function PomodoroTimer() {
           {isMobile ? "LB" : "Long Break"}
         </button>
       </div>
-      <div className="timer">
-        {currentTimer > 0 ? formatTime(currentTimer) : "Time up"}
+      <div className={`timer ${currentTimer === 0 ? "timer-end" : ""}`}>
+        {currentTimer > 0 ? formatTime(currentTimer) : "00:00"}
       </div>
       <div className="timer-buttons">
         <button onClick={handleStartStop}>

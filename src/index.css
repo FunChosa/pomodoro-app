@@ -11,8 +11,7 @@
 }
 
 body {
-  background-image: url(/src/assets/bg-images/1.jpg);
-  background-size: cover;
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +27,6 @@ body {
   margin: 20px;
   border-radius: 20px;
   border: none;
-  background-image: linear-gradient(rgba(0, 40, 120, 0.5),rgba(0, 0, 0, 0.8));
   backdrop-filter: blur(2px);
 }
 
@@ -66,6 +64,16 @@ button:hover {
   color: aliceblue;
 }
 
+.timer-end {
+  animation: blinker 1.5s steps(1) infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .setting-button {
   padding: 0;
   font-size: 24px;
@@ -77,6 +85,7 @@ button:hover {
 
 .setting-button:hover {
   background-color: transparent;
+  color: aliceblue;
 }
 
 .bg-button {
@@ -86,7 +95,6 @@ button:hover {
   padding: 10px;
   border: 1px solid aliceblue;
 }
-
 
 @media screen and (max-width: 600px) {
   .timer {
