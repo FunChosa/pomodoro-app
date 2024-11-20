@@ -79,6 +79,14 @@ button:hover {
   background-color: transparent;
 }
 
+.bg-button {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid aliceblue;
+}
+
 
 @media screen and (max-width: 600px) {
   .timer {

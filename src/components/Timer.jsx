@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { MdRestartAlt } from "react-icons/md";
 import { useMediaQuery } from "react-responsive";
+import bg1 from "../../src/assets/bg-images/1.jpg";
+import bg2 from "../../src/assets/bg-images/2.jpg";
+import bg3 from "../../src/assets/bg-images/3.jpg";
+import bg4 from "../../src/assets/bg-images/4.jpg";
 
 function PomodoroTimer() {
   const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
+
+  const bgs = [bg1, bg2, bg3, bg4];
+  const [bg, setBg] = useState(bgs[0]);
+
   const timers = {
     pomodoro: 25,
     shortBreak: 5,
     longBreak: 10,
   };
+
   const [isRunning, setIsRunning] = useState(false);
   const [currentTimer, setCurrentTimer] = useState(timers.pomodoro * 60);
   const [timerType, setTimerType] = useState("pomodoro");
@@ -68,7 +77,14 @@ function PomodoroTimer() {
   };
 
   return (
-    <div className="timer-container">
+    <div
+      className="timer-container"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), " + bg,
+        backgroundSize: "cover",
+      }}
+    >
       <div className="timer-buttons">
         <button
           onClick={() => handleSetTime(timers.pomodoro)}
@@ -99,6 +115,14 @@ function PomodoroTimer() {
         <button className="setting-button" onClick={handleReset}>
           <MdRestartAlt />
         </button>
+        {bgs.map((bg, index) => (
+          <button
+            key={index}
+            className="bg-button"
+            style={{ backgroundImage: `url(${bg})` }}
+            onClick={() => setBg(`url(${bg})`)}
+          />
+        ))}
       </div>
     </div>
   );
