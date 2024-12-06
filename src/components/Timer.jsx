@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { MdRestartAlt } from "react-icons/md";
 import { useMediaQuery } from "react-responsive";
-import bg0 from "../../src/assets/bg-images/0.jpg";
-import bg1 from "../../src/assets/bg-images/1.jpg";
-import bg3 from "../../src/assets/bg-images/3.jpg";
-import bg4 from "../../src/assets/bg-images/4.jpg";
-import bg6 from "../../src/assets/bg-images/6.jpg";
-import bg7 from "../../src/assets/bg-images/7.jpg";
-import bg8 from "../../src/assets/bg-images/8.jpg";
+import bg0 from "../images/0.jpg";
+import bg1 from "../images/1.jpg";
+import bg3 from "../images/3.jpg";
+import bg4 from "../images/4.jpg";
+import bg7 from "../images/7.jpg";
+import bg6 from "../images/6.jpg";
+import bg8 from "../images/8.jpg";
 
 function PomodoroTimer() {
   const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
