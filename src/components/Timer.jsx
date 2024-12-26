@@ -52,6 +52,9 @@ function PomodoroTimer() {
   }, [isRunning, currentTimer]);
 
   const handleStartStop = () => {
+    if (currentTimer === 0) {
+      handleReset();
+    }
     setIsRunning(!isRunning);
   };
 
@@ -112,7 +115,7 @@ function PomodoroTimer() {
         {currentTimer > 0 ? formatTime(currentTimer) : "00:00"}
       </div>
       <div className="timer-buttons">
-        <button onClick={handleStartStop}>
+        <button onClick={handleStartStop} className="start-stop-button">
           {isRunning ? "Stop" : "Start"}
         </button>
         <button className="setting-button" onClick={handleReset}>
